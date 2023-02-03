@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  db:
+    # see https://hub.docker.com/_/mysql/
+    image: mysql:8.0.32
+    platform: linux/amd64
+    container_name: point-db
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_USER: point
+      MYSQL_PASSWORD: point
+      MYSQL_DATABASE: point
+    volumes:
+      - point-db-data:/var/lib/mysql
+      - $PWD/db/mysql/conf.d:/etc/mysql/conf.d:cached
+    ports:
+      - "33306:3306"
+
+volumes:
+  point-db-data:
