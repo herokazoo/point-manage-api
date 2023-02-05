@@ -1,6 +1,14 @@
 version: "3.9"
 
 services:
+  api:
+    image: point-api
+    build:
+      args:
+        - target=dev
+    container_name: point-api
+    volumes:
+      - ..:/app
   db:
     # see https://hub.docker.com/_/mysql/
     image: mysql:8.0.32
