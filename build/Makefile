@@ -2,6 +2,9 @@
 .PHONY: up down logs ps dry-migrate migrate help
 .DEFAULT_GOAL := help
 
+build-local: ## Build docker image to local development
+	docker compose build --no-cache
+
 up: ## Do docker compose up with hot reload
 	docker compose up -d
 
