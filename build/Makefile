@@ -2,6 +2,12 @@
 .PHONY: up down logs ps dry-migrate migrate help
 .DEFAULT_GOAL := help
 
+DOCKER_TAG := latest
+
+build: ## Build docker image to deplay
+	docker build -f ./Dockerfile -t herokazoo/point-api:${DOCKER_TAG} \
+		--target deploy ../
+
 build-local: ## Build docker image to local development
 	docker compose build --no-cache
 
