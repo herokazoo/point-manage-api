@@ -4,6 +4,8 @@ services:
   api:
     image: point-api
     build:
+      context: ..
+      dockerfile: ./build/Dockerfile
       args:
         - target=dev
     environment:
