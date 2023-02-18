@@ -33,5 +33,5 @@ func (hs *HistoryStore) All() entity.UserPointHistories {
 	for i, h := range hs.Histories {
 		histories[i-1] = h
 	}
-	return histories 
+	return histories
 }
