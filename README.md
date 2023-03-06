@@ -6,7 +6,7 @@ point manage demo app api
 | ----------- | -------------------------------- | -------------------------------------------------------- | 
 | POST        | /register                        | Register a new user                                      | 
 | POST        | /login                           | Obtain an access token with registered user information  | 
-| POST        | /users/{user_id}/points/add      | add up the number of points using an access token        | 
+| POST        | /users/{user_id}/points/add      | Add up the number of points using an access token        | 
 | POST        | /users/{user_id}/points/subtract | Subtract the number of points using an access token      | 
-| GET         | /users/{user_id}/points          | reference the number of points using an access token     | 
+| GET         | /users/{user_id}/points          | Reference the number of points using an access token     | 
 | GET         | /users/{user_id}/points/history  | Refer to the list of point history using an access token | 
