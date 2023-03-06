@@ -8,7 +8,7 @@ type UserPointTotal int32
 
 type UserPoint struct {
 	ID      UserPointID    `json:"id"`
-	UserId  UserID         `json:"user_id"`
+	UserID  UserID         `json:"user_id"`
 	Total   UserPointTotal `json:"total"`
 	Created time.Time      `json:"created"`
 	Updated time.Time      `json:"updated"`
