@@ -37,7 +37,7 @@ func (ap *AddPoint) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		UserPointID: entity.UserPointID(b.UserPointID),
 		Created:     time.Now(),
 	}
-	id, err := store.Add(h)
+	id, err := store.Histories.Add(h)
 	if err != nil {
 		RespondJSON(ctx, w, &ErrResponse{
 			Message: err.Error(),
@@ -46,6 +46,6 @@ func (ap *AddPoint) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 	rsp := struct {
 		ID int `json:"id"`
-	}{ID: id}
+	}{ID: int(id)}
 	RespondJSON(ctx, w, rsp, http.StatusOK)
 }
